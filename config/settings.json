@@ -1,0 +1,39 @@
+{
+  "service": {
+    "port": 3001,
+    "logLevel": "info",
+    "maxCameras": 10
+  },
+  "streaming": {
+    "quality": "medium",
+    "framerate": 10,
+    "resolution": "640x480",
+    "format": "mjpeg"
+  },
+  "audio": {
+    "enabled": true,
+    "bidirectional": true,
+    "sampleRate": 44100,
+    "bitrate": 128
+  },
+  "cloud": {
+    "enabled": true,
+    "url": "wss://mysafeplay.vercel.app/ws",
+    "apiKey": "your_cloud_api_key_here",
+    "reconnectAttempts": 5,
+    "heartbeatInterval": 30000
+  },
+  "security": {
+    "requireAuth": false,
+    "allowedOrigins": [
+      "*"
+    ],
+    "rateLimitWindow": 900000,
+    "rateLimitMax": 100
+  },
+  "cameras": {
+    "discoveryTimeout": 5000,
+    "connectionTimeout": 10000,
+    "retryAttempts": 3
+  }
+}

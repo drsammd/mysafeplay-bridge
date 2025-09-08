@@ -1,0 +1,174 @@
+[2025-09-07T02:26:50.686Z] [INFO] Middleware configured
+[2025-09-07T02:26:50.694Z] [INFO] Routes configured
+[2025-09-07T02:26:50.698Z] [INFO] Socket handlers configured
+[2025-09-07T02:26:50.701Z] [INFO] Initializing Camera Manager...
+[2025-09-07T02:26:50.705Z] [INFO] Loading saved cameras...
+[2025-09-07T02:26:50.710Z] [INFO] Local Camera Service running on port 3001
+[2025-09-07T02:26:50.714Z] [INFO] Dashboard available at http://localhost:3001
+[2025-09-07T02:26:50.718Z] [INFO] WebSocket server ready for connections
+[2025-09-07T02:26:50.724Z] [INFO] Camera Manager initialized
+[2025-09-07T02:26:50.728Z] [INFO] Initializing Stream Server...
+[2025-09-07T02:26:50.735Z] [INFO] Stream Server initialized
+[2025-09-07T02:26:50.738Z] [INFO] Initializing Audio Handler...
+[2025-09-07T02:26:50.742Z] [INFO] Audio processing capabilities ready
+[2025-09-07T02:26:50.745Z] [INFO] Audio Handler initialized
+[2025-09-07T02:26:50.749Z] [INFO] Connecting to cloud service: wss://mysafeplay.vercel.app/ws
+[2025-09-07T02:26:51.104Z] [ERROR] Cloud connection error: {}
+[2025-09-07T02:26:51.108Z] [WARN] Cloud connection closed: 1006 - 
+[2025-09-07T02:26:51.112Z] [INFO] Scheduling reconnection attempt 1 in 5000ms
+[2025-09-07T02:26:51.115Z] [ERROR] Failed to connect to cloud service: {}
+[2025-09-07T02:26:51.119Z] [INFO] Scheduling reconnection attempt 2 in 10000ms
+[2025-09-07T02:26:51.123Z] [INFO] All services initialized successfully
+[2025-09-07T02:26:52.726Z] [INFO] Starting ONVIF camera discovery...
+[2025-09-07T02:26:55.733Z] [INFO] Discovered 0 ONVIF cameras
+[2025-09-07T02:26:55.737Z] [INFO] Added Reolink E1 Pro camera manually
+[2025-09-07T02:26:56.115Z] [INFO] Connecting to cloud service: wss://mysafeplay.vercel.app/ws
+[2025-09-07T02:26:56.383Z] [ERROR] Cloud connection error: {}
+[2025-09-07T02:26:56.387Z] [WARN] Cloud connection closed: 1006 - 
+[2025-09-07T02:26:56.390Z] [INFO] Scheduling reconnection attempt 3 in 20000ms
+[2025-09-07T02:26:56.394Z] [ERROR] Failed to connect to cloud service: {}
+[2025-09-07T02:26:56.397Z] [INFO] Scheduling reconnection attempt 4 in 40000ms
+[2025-09-07T02:27:01.125Z] [INFO] Connecting to cloud service: wss://mysafeplay.vercel.app/ws
+[2025-09-07T02:27:01.211Z] [ERROR] Cloud connection error: {}
+[2025-09-07T02:27:01.214Z] [WARN] Cloud connection closed: 1006 - 
+[2025-09-07T02:27:01.218Z] [INFO] Scheduling reconnection attempt 5 in 80000ms
+[2025-09-07T02:27:01.222Z] [ERROR] Failed to connect to cloud service: {}
+[2025-09-07T02:27:01.225Z] [ERROR] Max reconnection attempts reached
+[2025-09-07T02:27:16.407Z] [INFO] Connecting to cloud service: wss://mysafeplay.vercel.app/ws
+[2025-09-07T02:27:16.518Z] [ERROR] Cloud connection error: {}
+[2025-09-07T02:27:16.522Z] [WARN] Cloud connection closed: 1006 - 
+[2025-09-07T02:27:16.526Z] [ERROR] Max reconnection attempts reached
+[2025-09-07T02:27:16.529Z] [ERROR] Failed to connect to cloud service: {}
+[2025-09-07T02:27:16.533Z] [ERROR] Max reconnection attempts reached
+[2025-09-07T02:27:28.344Z] [INFO] Shutting down Local Camera Service...
+[2025-09-07T02:27:28.348Z] [INFO] Stopping all active streams...
+[2025-09-07T02:27:28.352Z] [INFO] All streams stopped
+[2025-09-07T02:27:28.355Z] [INFO] Disconnecting from cloud service
+[2025-09-07T02:27:28.359Z] [INFO] Service shutdown complete
+[2025-09-07T02:27:32.859Z] [INFO] Middleware configured
+[2025-09-07T02:27:32.864Z] [INFO] Routes configured
+[2025-09-07T02:27:32.868Z] [INFO] Socket handlers configured
+[2025-09-07T02:27:32.871Z] [INFO] Initializing Camera Manager...
+[2025-09-07T02:27:32.875Z] [INFO] Loading saved cameras...
+[2025-09-07T02:27:32.879Z] [INFO] Local Camera Service running on port 3001
+[2025-09-07T02:27:32.883Z] [INFO] Dashboard available at http://localhost:3001
+[2025-09-07T02:27:32.886Z] [INFO] WebSocket server ready for connections
+[2025-09-07T02:27:32.890Z] [INFO] Camera Manager initialized
+[2025-09-07T02:27:32.894Z] [INFO] Initializing Stream Server...
+[2025-09-07T02:27:32.898Z] [INFO] Stream Server initialized
+[2025-09-07T02:27:32.901Z] [INFO] Initializing Audio Handler...
+[2025-09-07T02:27:32.905Z] [INFO] Audio processing capabilities ready
+[2025-09-07T02:27:32.908Z] [INFO] Audio Handler initialized
+[2025-09-07T02:27:32.912Z] [INFO] Connecting to cloud service: wss://mysafeplay.vercel.app/ws
+[2025-09-07T02:27:33.031Z] [ERROR] Cloud connection error: {}
+[2025-09-07T02:27:33.035Z] [WARN] Cloud connection closed: 1006 - 
+[2025-09-07T02:27:33.038Z] [INFO] Scheduling reconnection attempt 1 in 5000ms
+[2025-09-07T02:27:33.042Z] [ERROR] Failed to connect to cloud service: {}
+[2025-09-07T02:27:33.045Z] [INFO] Scheduling reconnection attempt 2 in 10000ms
+[2025-09-07T02:27:33.048Z] [INFO] All services initialized successfully
+[2025-09-07T02:27:34.892Z] [INFO] Starting ONVIF camera discovery...
+[2025-09-07T02:27:37.898Z] [INFO] Discovered 0 ONVIF cameras
+[2025-09-07T02:27:37.903Z] [INFO] Added Reolink E1 Pro camera manually
+[2025-09-07T02:27:38.041Z] [INFO] Connecting to cloud service: wss://mysafeplay.vercel.app/ws
+[2025-09-07T02:27:38.127Z] [ERROR] Cloud connection error: {}
+[2025-09-07T02:27:38.131Z] [WARN] Cloud connection closed: 1006 - 
+[2025-09-07T02:27:38.134Z] [INFO] Scheduling reconnection attempt 3 in 20000ms
+[2025-09-07T02:27:38.138Z] [ERROR] Failed to connect to cloud service: {}
+[2025-09-07T02:27:38.141Z] [INFO] Scheduling reconnection attempt 4 in 40000ms
+[2025-09-07T02:27:43.050Z] [INFO] Connecting to cloud service: wss://mysafeplay.vercel.app/ws
+[2025-09-07T02:27:43.133Z] [ERROR] Cloud connection error: {}
+[2025-09-07T02:27:43.137Z] [WARN] Cloud connection closed: 1006 - 
+[2025-09-07T02:27:43.141Z] [INFO] Scheduling reconnection attempt 5 in 80000ms
+[2025-09-07T02:27:43.144Z] [ERROR] Failed to connect to cloud service: {}
+[2025-09-07T02:27:43.148Z] [ERROR] Max reconnection attempts reached
+[2025-09-07T02:27:44.701Z] [INFO] Shutting down Local Camera Service...
+[2025-09-07T02:27:44.705Z] [INFO] Stopping all active streams...
+[2025-09-07T02:27:44.709Z] [INFO] All streams stopped
+[2025-09-07T02:27:44.713Z] [INFO] Disconnecting from cloud service
+[2025-09-07T02:27:44.717Z] [INFO] Service shutdown complete
+[2025-09-07T02:27:50.375Z] [INFO] Middleware configured
+[2025-09-07T02:27:50.380Z] [INFO] Routes configured
+[2025-09-07T02:27:50.384Z] [INFO] Socket handlers configured
+[2025-09-07T02:27:50.387Z] [INFO] Initializing Camera Manager...
+[2025-09-07T02:27:50.391Z] [INFO] Loading saved cameras...
+[2025-09-07T02:27:50.395Z] [INFO] Local Camera Service running on port 3001
+[2025-09-07T02:27:50.399Z] [INFO] Dashboard available at http://localhost:3001
+[2025-09-07T02:27:50.402Z] [INFO] WebSocket server ready for connections
+[2025-09-07T02:27:50.406Z] [INFO] Camera Manager initialized
+[2025-09-07T02:27:50.409Z] [INFO] Initializing Stream Server...
+[2025-09-07T02:27:50.413Z] [INFO] Stream Server initialized
+[2025-09-07T02:27:50.416Z] [INFO] Initializing Audio Handler...
+[2025-09-07T02:27:50.420Z] [INFO] Audio processing capabilities ready
+[2025-09-07T02:27:50.423Z] [INFO] Audio Handler initialized
+[2025-09-07T02:27:50.427Z] [INFO] Connecting to cloud service: wss://mysafeplay.vercel.app/ws
+[2025-09-07T02:27:50.554Z] [ERROR] Cloud connection error: {}
+[2025-09-07T02:27:50.558Z] [WARN] Cloud connection closed: 1006 - 
+[2025-09-07T02:27:50.561Z] [INFO] Scheduling reconnection attempt 1 in 5000ms
+[2025-09-07T02:27:50.565Z] [ERROR] Failed to connect to cloud service: {}
+[2025-09-07T02:27:50.569Z] [INFO] Scheduling reconnection attempt 2 in 10000ms
+[2025-09-07T02:27:50.572Z] [INFO] All services initialized successfully
+[2025-09-07T02:27:52.406Z] [INFO] Starting ONVIF camera discovery...
+[2025-09-07T02:27:55.414Z] [INFO] Discovered 0 ONVIF cameras
+[2025-09-07T02:27:55.418Z] [INFO] Added Reolink E1 Pro camera manually
+[2025-09-07T02:27:55.565Z] [INFO] Connecting to cloud service: wss://mysafeplay.vercel.app/ws
+[2025-09-07T02:27:55.643Z] [ERROR] Cloud connection error: {}
+[2025-09-07T02:27:55.647Z] [WARN] Cloud connection closed: 1006 - 
+[2025-09-07T02:27:55.650Z] [INFO] Scheduling reconnection attempt 3 in 20000ms
+[2025-09-07T02:27:55.654Z] [ERROR] Failed to connect to cloud service: {}
+[2025-09-07T02:27:55.657Z] [INFO] Scheduling reconnection attempt 4 in 40000ms
+[2025-09-07T02:27:59.475Z] [INFO] 🧪 Starting Camera Service Tests...
+
+[2025-09-07T02:27:59.481Z] [INFO] Starting ONVIF camera discovery test...
+[2025-09-07T02:28:00.574Z] [INFO] Connecting to cloud service: wss://mysafeplay.vercel.app/ws
+[2025-09-07T02:28:00.680Z] [ERROR] Cloud connection error: {}
+[2025-09-07T02:28:00.685Z] [WARN] Cloud connection closed: 1006 - 
+[2025-09-07T02:28:00.689Z] [INFO] Scheduling reconnection attempt 5 in 80000ms
+[2025-09-07T02:28:00.692Z] [ERROR] Failed to connect to cloud service: {}
+[2025-09-07T02:28:00.696Z] [ERROR] Max reconnection attempts reached
+[2025-09-07T02:28:02.489Z] [WARN] ⚠️  No ONVIF cameras found on the network
+[2025-09-07T02:28:02.493Z] [INFO] This could mean:
+[2025-09-07T02:28:02.497Z] [INFO]   • No ONVIF-compliant cameras on network
+[2025-09-07T02:28:02.501Z] [INFO]   • Cameras are on different subnet
+[2025-09-07T02:28:02.504Z] [INFO]   • Firewall blocking discovery
+[2025-09-07T02:28:02.508Z] [INFO]   • Cameras have ONVIF disabled
+[2025-09-07T02:28:02.512Z] [INFO] 
+🔧 Testing manual camera configuration...
+[2025-09-07T02:28:07.519Z] [ERROR] ❌ Manual camera test failed: Connection timeout
+[2025-09-07T02:28:07.523Z] [INFO] Check:
+[2025-09-07T02:28:07.526Z] [INFO]   • Camera is powered on and connected
+[2025-09-07T02:28:07.530Z] [INFO]   • IP address 192.168.1.177 is correct
+[2025-09-07T02:28:07.533Z] [INFO]   • Port 554 is accessible
+[2025-09-07T02:28:07.537Z] [INFO]   • Network connectivity to camera
+[2025-09-07T02:28:07.540Z] [INFO] 
+🎥 Testing RTSP stream connectivity...
+[2025-09-07T02:28:07.544Z] [INFO] ✅ RTSP URL format is valid: rtsp://192.168.1.177:554/h264Preview_01_main
+[2025-09-07T02:28:07.547Z] [INFO] ✅ RTSP URL structure validation passed
+[2025-09-07T02:28:07.551Z] [INFO] Note: Actual stream testing requires FFmpeg integration
+[2025-09-07T02:28:07.554Z] [INFO] 
+📊 Test Results Summary:
+[2025-09-07T02:28:07.558Z] [INFO] ========================
+[2025-09-07T02:28:07.561Z] [INFO] ONVIF Discovery: ✅ PASS
+[2025-09-07T02:28:07.565Z] [INFO] Manual Camera: ❌ FAIL
+[2025-09-07T02:28:07.568Z] [INFO] Stream Connectivity: ✅ PASS
+[2025-09-07T02:28:07.571Z] [INFO] 
+Overall: 2/3 tests passed
+[2025-09-07T02:28:07.575Z] [INFO] ⚠️  Some tests failed, but basic functionality may still work.
+[2025-09-07T02:28:13.807Z] [INFO] Client connected: TrUAPaULAoUEEjWgAAAB
+[2025-09-07T02:28:15.654Z] [INFO] Connecting to cloud service: wss://mysafeplay.vercel.app/ws
+[2025-09-07T02:28:15.733Z] [ERROR] Cloud connection error: {}
+[2025-09-07T02:28:15.737Z] [WARN] Cloud connection closed: 1006 - 
+[2025-09-07T02:28:15.741Z] [ERROR] Max reconnection attempts reached
+[2025-09-07T02:28:15.745Z] [ERROR] Failed to connect to cloud service: {}
+[2025-09-07T02:28:15.749Z] [ERROR] Max reconnection attempts reached
+[2025-09-07T02:28:35.674Z] [INFO] Connecting to cloud service: wss://mysafeplay.vercel.app/ws
+[2025-09-07T02:28:35.765Z] [ERROR] Cloud connection error: {}
+[2025-09-07T02:28:35.769Z] [WARN] Cloud connection closed: 1006 - 
+[2025-09-07T02:28:35.772Z] [ERROR] Max reconnection attempts reached
+[2025-09-07T02:28:35.776Z] [ERROR] Failed to connect to cloud service: {}
+[2025-09-07T02:28:35.780Z] [ERROR] Max reconnection attempts reached
+[2025-09-07T02:29:20.692Z] [INFO] Connecting to cloud service: wss://mysafeplay.vercel.app/ws
+[2025-09-07T02:29:20.775Z] [ERROR] Cloud connection error: {}
+[2025-09-07T02:29:20.779Z] [WARN] Cloud connection closed: 1006 - 
+[2025-09-07T02:29:20.783Z] [ERROR] Max reconnection attempts reached
+[2025-09-07T02:29:20.786Z] [ERROR] Failed to connect to cloud service: {}
+[2025-09-07T02:29:20.790Z] [ERROR] Max reconnection attempts reached

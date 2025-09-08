@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySafePlay - Local Camera Service</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-shield-alt"></i>
+                    <h1>MySafePlay</h1>
+                    <span class="subtitle">Local Camera Service</span>
+                </div>
+                <div class="status-indicators">
+                    <div class="status-item">
+                        <i class="fas fa-circle" id="service-status"></i>
+                        <span>Service</span>
+                    </div>
+                    <div class="status-item">
+                        <i class="fas fa-cloud" id="cloud-status"></i>
+                        <span>Cloud</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Stats -->
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="camera-count">0</h3>
+                            <p>Cameras</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="stream-count">0</h3>
+                            <p>Active Streams</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="audio-count">0</h3>
+                            <p>Audio Streams</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3 id="uptime">0s</h3>
+                            <p>Uptime</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Camera Discovery -->
+            <section class="discovery-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-search"></i> Camera Discovery</h2>
+                    <button id="discover-btn" class="btn btn-primary">
+                        <i class="fas fa-sync"></i> Discover Cameras
+                    </button>
+                </div>
+                <div class="discovery-status" id="discovery-status">
+                    <p>Click "Discover Cameras" to scan your network for ONVIF cameras</p>
+                </div>
+            </section>
+
+            <!-- Camera List -->
+            <section class="cameras-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-video"></i> Cameras</h2>
+                    <button id="add-camera-btn" class="btn btn-secondary">
+                        <i class="fas fa-plus"></i> Add Camera
+                    </button>
+                </div>
+                <div class="cameras-grid" id="cameras-grid">
+                    <!-- Camera cards will be populated here -->
+                </div>
+            </section>
+
+            <!-- Live Streams -->
+            <section class="streams-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-broadcast-tower"></i> Live Streams</h2>
+                </div>
+                <div class="streams-grid" id="streams-grid">
+                    <!-- Stream viewers will be populated here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Modals -->
+        <!-- Add Camera Modal -->
+        <div id="add-camera-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Add Camera</h3>
+                    <button class="modal-close">&times;</button>
+                </div>
+                <form id="add-camera-form">
+                    <div class="form-group">
+                        <label for="camera-name">Camera Name</label>
+                        <input type="text" id="camera-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="camera-ip">IP Address</label>
+                        <input type="text" id="camera-ip" placeholder="192.168.1.100" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="camera-port">Port</label>
+                        <input type="number" id="camera-port" value="554" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="camera-username">Username</label>
+                        <input type="text" id="camera-username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="camera-password">Password</label>
+                        <input type="password" id="camera-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="camera-path">RTSP Path</label>
+                        <input type="text" id="camera-path" placeholder="/h264Preview_01_main" value="/h264Preview_01_main">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="cancel-add-camera">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Add Camera</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Stream Viewer Modal -->
+        <div id="stream-modal" class="modal">
+            <div class="modal-content stream-modal-content">
+                <div class="modal-header">
+                    <h3 id="stream-title">Camera Stream</h3>
+                    <div class="stream-controls">
+                        <button id="audio-toggle" class="btn btn-icon" title="Toggle Audio">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <button id="fullscreen-btn" class="btn btn-icon" title="Fullscreen">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                        <button class="modal-close">&times;</button>
+                    </div>
+                </div>
+                <div class="stream-container">
+                    <div class="stream-viewer" id="stream-viewer">
+                        <img id="stream-image" alt="Camera Stream">
+                        <div class="stream-overlay">
+                            <div class="stream-info">
+                                <span id="stream-fps">0 FPS</span>
+                                <span id="stream-resolution">0x0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="audio-controls" id="audio-controls">
+                        <div class="audio-level">
+                            <label>Microphone</label>
+                            <input type="range" id="mic-volume" min="0" max="100" value="50">
+                        </div>
+                        <div class="audio-level">
+                            <label>Speaker</label>
+                            <input type="range" id="speaker-volume" min="0" max="100" value="50">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
