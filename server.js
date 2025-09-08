@@ -27,7 +27,7 @@ class LocalCameraService {
             }
         });
         
-        this.port = process.env.PORT || 3001;
+        this.port = process.env.PORT || 3000;
         this.logger = new Logger();
         
         // Initialize services
@@ -220,16 +220,72 @@ class LocalCameraService {
         }
     }
 
-    start() {
-        this.server.listen(this.port, () => {
-            this.logger.info(`Local Camera Service running on port ${this.port}`);
-            this.logger.info(`Dashboard available at http://localhost:${this.port}`);
-            this.logger.info(`WebSocket server ready for connections`);
+    async findAvailablePort(startPort) {
+        const net = require('net');
+        
+        return new Promise((resolve) => {
+            const server = net.createServer();
+            
+            server.listen(startPort, () => {
+                const port = server.address().port;
+                server.close(() => resolve(port));
+            });
+            
+            server.on('error', () => {
+                // Port is in use, try next one
+                resolve(this.findAvailablePort(startPort + 1));
+            });
         });
+    }
 
-        // Graceful shutdown
-        process.on('SIGTERM', () => this.shutdown());
-        process.on('SIGINT', () => this.shutdown());
+    async start() {
+        try {
+            // Check if port is available, find alternative if needed
+            const availablePort = await this.findAvailablePort(this.port);
+            if (availablePort !== this.port) {
+                this.logger.warn(`Port ${this.port} is in use, using port ${availablePort} instead`);
+                this.port = availablePort;
+            }
+
+            this.server.listen(this.port, () => {
+                this.logger.info(`Local Camera Service running on port ${this.port}`);
+                this.logger.info(`Dashboard available at http://localhost:${this.port}`);
+                this.logger.info(`WebSocket server ready for connections`);
+                
+                // On Windows, show additional startup info
+                if (process.platform === 'win32') {
+                    console.log(`\n=== MySafePlay Bridge Started Successfully ===`);
+                    console.log(`Web Interface: http://localhost:${this.port}`);
+                    console.log(`Service is running in the background...`);
+                    console.log(`To stop the service, close this window or press Ctrl+C`);
+                    console.log(`===============================================\n`);
+                }
+            });
+
+            this.server.on('error', (error) => {
+                this.logger.error('Server error:', error);
+                if (error.code === 'EADDRINUSE') {
+                    this.logger.error(`Port ${this.port} is already in use`);
+                    this.logger.info('Trying to find an alternative port...');
+                    setTimeout(() => this.start(), 1000);
+                } else {
+                    throw error;
+                }
+            });
+
+            // Graceful shutdown
+            process.on('SIGTERM', () => this.shutdown());
+            process.on('SIGINT', () => this.shutdown());
+            
+            // Windows-specific cleanup
+            if (process.platform === 'win32') {
+                process.on('SIGHUP', () => this.shutdown());
+            }
+            
+        } catch (error) {
+            this.logger.error('Failed to start server:', error);
+            throw error;
+        }
     }
 
     async shutdown() {
@@ -250,8 +306,32 @@ class LocalCameraService {
 
 // Start the service
 if (require.main === module) {
-    const service = new LocalCameraService();
-    service.start();
+    (async () => {
+        console.log('MySafePlay Bridge starting...');
+        console.log('Node.js version:', process.version);
+        console.log('Platform:', process.platform);
+        console.log('Architecture:', process.arch);
+        console.log('Working directory:', process.cwd());
+        console.log('Script path:', __filename);
+        
+        try {
+            const service = new LocalCameraService();
+            await service.start();
+        } catch (error) {
+            console.error('FATAL ERROR during startup:', error);
+            console.error('Stack trace:', error.stack);
+            
+            // Keep console open on Windows for debugging
+            if (process.platform === 'win32') {
+                console.log('\nPress any key to exit...');
+                process.stdin.setRawMode(true);
+                process.stdin.resume();
+                process.stdin.on('data', () => process.exit(1));
+            } else {
+                process.exit(1);
+            }
+        }
+    })();
 }
 
 module.exports = LocalCameraService;
